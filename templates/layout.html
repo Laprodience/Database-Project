@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-9" name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='bulma.css')}}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{{url_for('home_page')}}">News</a></li>
+
+                <li><a href="{{url_for('matches_page')}}">Matches</a></li>
+
+                <li><a href="{{url_for('teams_page')}}">Teams</a></li>
+
+                <li><a href="{{url_for('top_page')}}">Top 20</a></li>
+
+                <li><a href="{{url_for('users_page')}}">Users</a></li>
+
+                <li><a href="{{url_for('profile_page')}}">Profile</a></li>
+
+                <li><a href="{{url_for('logout_page')}}">Log out</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    {% block content %}{% endblock %}
+
+    <footer>
+        <small>&copy 2020 mert</small>
+    </footer>
+</body>
+</html>
