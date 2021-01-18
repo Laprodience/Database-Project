@@ -25,6 +25,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="forms.py" />
+    <Compile Include="machine.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="object.py">
       <SubType>Code</SubType>
     </Compile>
@@ -37,14 +40,72 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="static\images\" />
     <Folder Include="static\" />
     <Folder Include="templates\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="static\images\Aleksib.webp" />
+    <Content Include="static\images\AmaNEk.webp" />
+    <Content Include="static\images\apEX.webp" />
+    <Content Include="static\images\arT.webp" />
+    <Content Include="static\images\b0RUP.webp" />
+    <Content Include="static\images\Boombl4.webp" />
+    <Content Include="static\images\Bymas.webp" />
+    <Content Include="static\images\cadiaN.webp" />
+    <Content Include="static\images\chrisJ.webp" />
+    <Content Include="static\images\device.png" />
+    <Content Include="static\images\dupreeh.png" />
+    <Content Include="static\images\electronic.webp" />
+    <Content Include="static\images\EliGE.webp" />
+    <Content Include="static\images\flamie.png" />
+    <Content Include="static\images\frozen.webp" />
+    <Content Include="static\images\gla1ve.png" />
+    <Content Include="static\images\Grim.webp" />
+    <Content Include="static\images\HEN1.webp" />
+    <Content Include="static\images\huNter-.webp" />
+    <Content Include="static\images\ISSAA.webp" />
+    <Content Include="static\images\k1to.webp" />
+    <Content Include="static\images\karrigan.webp" />
+    <Content Include="static\images\kennyS.webp" />
+    <Content Include="static\images\KSCERATO.webp" />
+    <Content Include="static\images\Magisk.webp" />
+    <Content Include="static\images\mantuu.webp" />
+    <Content Include="static\images\misutaaa.webp" />
+    <Content Include="static\images\NAF.webp" />
+    <Content Include="static\images\NBK-.webp" />
+    <Content Include="static\images\nexa.webp" />
+    <Content Include="static\images\niko-.webp" />
+    <Content Include="static\images\NiKo.webp" />
+    <Content Include="static\images\Perfecto.webp" />
+    <Content Include="static\images\ropz.webp" />
+    <Content Include="static\images\RpK.webp" />
+    <Content Include="static\images\s1mple.webp" />
+    <Content Include="static\images\shox.webp" />
+    <Content Include="static\images\stavn.webp" />
+    <Content Include="static\images\Stewie2K.webp" />
+    <Content Include="static\images\syrsoN.webp" />
+    <Content Include="static\images\tabseN.webp" />
+    <Content Include="static\images\TeSeS.webp" />
+    <Content Include="static\images\tiziaN.webp" />
+    <Content Include="static\images\Twistzz.webp" />
+    <Content Include="static\images\valde.webp" />
+    <Content Include="static\images\VINI.webp" />
+    <Content Include="static\images\XANTARES.webp" />
+    <Content Include="static\images\Xyp9x.png" />
+    <Content Include="static\images\yuurih.webp" />
+    <Content Include="static\images\ZywOo.webp" />
+    <Content Include="templates\adminpanel.html" />
     <Content Include="templates\home.html" />
     <Content Include="templates\layout.html" />
     <Content Include="templates\login.html" />
+    <Content Include="templates\matches.html" />
+    <Content Include="templates\player.html" />
+    <Content Include="templates\profile.html" />
     <Content Include="templates\register.html" />
+    <Content Include="templates\teams.html" />
+    <Content Include="templates\top.html" />
+    <Content Include="templates\users.html" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

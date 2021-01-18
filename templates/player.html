@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+{% extends "layout.html" %}
+{% block title %}counterbet.com{% endblock %}
+{% block content %}
+<h1> {{ player.nickname }} </h1>
+<p></p>
+
+<img src="{{url_for('static', filename = photostring)}}"/>
+<table>
+    <tr>
+        <td>
+            <h3>{{ player.nickname }}</h3>
+            <h3> Rating: </h3>{{ player.rating }}
+            <h3>Team: </h3>{{ player.team }}
+            <h3>Settings: </h3>{{ player.settings }}
+        </td>
+    </tr>
+</table>
+{% endblock %}

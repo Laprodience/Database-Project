@@ -2,23 +2,24 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Login</title>
+    <title>counterbet.com</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='login.css')}}">
 </head>
-<body>
-    <div class="login">
+<body style="background-color: #B8860B;">
+    <div>
         <h1>Login</h1>
-        <div class="links">
+        <div>
             <a href="{{ url_for('register_page') }}" class="active">Register</a>
         </div>
         <form action="{{ url_for('login_page') }}" method="post">
             <label for="nickname">
                 <i class="fas fa-user"></i>
             </label>
-            <input type="text" name="nickname" placeholder="Nickname" id="nickname" required>
+            <input class="box" type="text" name="nickname" placeholder="Nickname" id="nickname" required>
             <label for="password">
                 <i class="fas fa-lock"></i>
             </label>
-            <input type="password" name="password" placeholder="Password" id="password" required>
+            <input class="box" type="password" name="password" placeholder="Password" id="password" required>
             <div class="msg">{{ msg }}</div>
             <input type="submit" value="Login">
         </form>

@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+{% extends "layout.html" %}
+{% block title %}counterbet.com{% endblock %}
+{% block content %}
+<h1>User List</h1>
+<p>Currently we have {{ playercount }} professional players and {{ usercount }} registered users, making {{ totalcount }} users in total.</p>
+<h2>Search by Nickname</h2>
+<div>
+    <form action="{{ url_for('users_page') }}" method="post">
+        <input class="box" type="text" name="searchnm" placeholder="Enter Name" id="searchnm" required>
+
+        <input type="submit" value="Search">
+    </form>
+</div>
+<table>
+    {% for nickname in searchresult %}
+    <tr>
+        <td>
+            <b>
+                {{ nickname }}
+            </b>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+<hr />
+<hr />
+<form action="" method="post" name="users">
+    <h2>Players</h2>
+    <table>
+        {% for player in players %}
+        <tr>
+            <td>
+                <b>
+                    <a href="{{ url_for('player_page', player_nickname=player.nickname) }}">
+                        {{ player.nickname }}
+                    </a>
+                </b>,
+                &emsp;
+                <b>Team: </b>{{ player.team }},
+                &emsp;
+                <b>Rating: </b>{{ player.rating }}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <hr />
+    <hr />
+    <h1>Registered Users</h1>
+    <table>
+        {% for user in users %}
+        <tr>
+            <td>
+                {{ user.nickname }},
+                &emsp;
+                {{ user.registerdate }}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</form>
+{% endblock %}

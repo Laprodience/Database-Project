@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+{% extends "layout.html" %}
+{% block title %}counterbet.com{% endblock %}
+{% block content %}
+<h1>Matches</h1>
+<h2>Ongoing Matches</h2>
+<table>
+    {% for match in ongoing %}
+    <tr>
+        <td>
+            <b>Match ID: </b>{{ match.id }}
+            &emsp;
+            <b>Team 1: </b>{{ match.team1 }}
+            &emsp;
+            <b>Team 2: </b>{{ match.team2 }}
+            &emsp;
+            <b>Team 1 Odd: </b>{{ match.team1_odd }}
+            &emsp;
+            <b>Team 2 Odd: </b>{{ match.team2_odd }}
+            &emsp;
+            <b>Match Date: </b>{{ match.date }}
+            &emsp;
+            <b>Match Score: </b><matchscoretag>{{ match.score }}</matchscoretag>
+            &emsp;<br />
+            {% if (session['nickname'] == "admin") and (match.score == "0 - 0") %}
+                <form action="{{ url_for('matches_page') }}" method="post">
+                    <button type="submit" name="startmatch" value="{{ match.id }}"> Execute </button>
+                </form>
+            {% endif %}
+</td>
+    </tr>
+    {% endfor %}
+</table>
+<hr />
+<hr />
+<h2>Upcoming Matches</h2>
+<table>
+    {% for match in upcoming %}
+    <tr>
+        <td>
+            <b>Match ID: </b>{{ match.id }}
+            &emsp;
+            <b>Team 1: </b>{{ match.team1 }}
+            &emsp;
+            <b>Team 2: </b>{{ match.team2 }}
+            &emsp;
+            <b>Team 1 Odd: </b>{{ match.team1_odd }}
+            &emsp;
+            <b>Team 2 Odd: </b>{{ match.team2_odd }}
+            &emsp;
+            <b>Match Date: </b>{{ match.date }}
+            <form action="{{ url_for('matches_page') }}" method="post" name="betmatch">
+                <br><input type="radio" name="betodd" value="{{ match.id }},  {{ match.team1_odd }}"> Bet for {{ match.team1 }}: {{ match.team1_odd }}
+                <br><input type="radio" name="betodd" value="{{ match.id }}, {{ match.team2_odd }}"> Bet for {{ match.team2 }}: {{ match.team2_odd }}
+                <br><input class="box" type="text" name="betamount" placeholder="Amount" id="betamount" required>
+                {% if returnid == match.id %}
+                    <br><div class="msg">{{ msg }}</div>
+                {% endif %}
+                <input type="submit" value="Play Bet">
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+<hr />
+<hr />
+<h2>Played Matches</h2>
+<table>
+    {% for match in played %}
+    <tr>
+        <td>
+            <b>Match ID: </b>{{ match.id }}
+            &emsp;
+            <b>Team 1: </b>{{ match.team1 }}
+            &emsp;
+            <b>Team 2: </b>{{ match.team2 }}
+            &emsp;
+            <b>Team 1 Odd: </b>{{ match.team1_odd }}
+            &emsp;
+            <b>Team 2 Odd: </b>{{ match.team2_odd }}
+            &emsp;
+            <b>Match Date: </b>{{ match.date }}
+            &emsp;
+            <b>Match Score: </b>{{ match.score }}
+            &emsp;
+            <b>Match Winner: </b>{{ match.winner }}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

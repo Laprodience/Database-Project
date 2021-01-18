@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+{% extends "layout.html" %}
+{% block title %}counterbet.com{% endblock %}
+{% block content %}
+<h1>Admin Panel</h1>
+<h2>Add Match</h2>
+<div>
+    <form action="{{ url_for('admin_page') }}" method="post">
+    
+        <input class="box" type="text" name="team1" placeholder="Team 1" id="team1" required>
+
+        <input class="box" type="text" name="team2" placeholder="Team 2" id="team2" required>
+
+        <input class="box" type="text" name="date" placeholder="yyyy-mm-dd hh-mm" id="date" required>
+
+        <div class="msg">{{ msg }}</div>
+        <input type="submit" value="Add Match">
+    </form>
+</div>
+<hr/>
+<hr/>
+<h2>Remove Matches</h2>
+<form action="" method="post" name="played_matches">
+    <table>
+        {% for match in played %}
+        <tr>
+            <td>
+                <label class="checkbox">
+                    <input type="checkbox" name="match_ids" value="{{ match.id }}">
+                </label>
+                <b>Match ID: </b>{{ match.id }}
+                &emsp;
+                <b>Team 1: </b>{{ match.team1 }}
+                &emsp;
+                <b>Team 2: </b>{{ match.team2 }}
+                &emsp;
+                <b>Team 1 Odd: </b>{{ match.team1_odd }}
+                &emsp;
+                <b>Team 2 Odd: </b>{{ match.team2_odd }}
+                &emsp;
+                <b>Match Date: </b>{{ match.date }}
+                &emsp;
+                <b>Match Score: </b>{{ match.score }}
+                &emsp;
+                <b>Match Winner: </b>{{ match.winner }}
+            </td>
+        </tr>
+        {% endfor %}
+
+    </table>
+    {% if played %}
+    <input type="submit" value="Remove">
+    {% endif %}
+</form>
+{% endblock %}

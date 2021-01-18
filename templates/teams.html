@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+{% extends "layout.html" %}
+{% block title %}counterbet.com{% endblock %}
+{% block content %}
+<h1>Teams</h1>
+<p></p>
+<form action="" method="post" name="top">
+    <ol class="top">
+        {% for team in teams %}
+        <li>
+            <b>{{ team.name }}</b>:
+            &emsp;
+            <a href="{{ url_for('player_page', player_nickname=team.captain) }}">{{ team.captain }}</a>&emsp;-
+            &emsp;
+            <a href="{{ url_for('player_page', player_nickname=team.sniper) }}">{{ team.sniper }}</a>&emsp;-
+            &emsp;
+            <a href="{{ url_for('player_page', player_nickname=team.entry_fragger) }}">{{ team.entry_fragger }}</a>&emsp;-
+            &emsp;
+            <a href="{{ url_for('player_page', player_nickname=team.support) }}">{{ team.support }}</a>&emsp;-
+            &emsp;
+            <a href="{{ url_for('player_page', player_nickname=team.lurker) }}">{{ team.lurker }}</a>
+            {% endfor %}
+        </li>
+    </ol>
+</form>
+{% endblock %}
