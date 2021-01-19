@@ -77,7 +77,7 @@ def matches_page():
 		ongoing = []
 		played = []
 		mycursor = db.cursor()
-		mycursor.execute('SELECT id, team1, team2, team1_odd, team2_odd, date, score, winner FROM matches ORDER BY date ASC')
+		mycursor.execute('SELECT id, team1, team2, team1_odd, team2_odd, date, score, winner FROM matches ORDER BY id DESC')
 		for id, team1, team2, team1_odd, team2_odd, date, score, winner in mycursor:
 			if(winner):
 				played.append(Match(id, team1, team2, team1_odd, team2_odd, date, score, winner))
@@ -192,12 +192,6 @@ def matches_page():
 			return redirect(url_for('matches_page'))
 			
 		return render_template('matches.html', ongoing=ongoing, upcoming=upcoming, played=played, msg=msg, returnid=returnid)
-	else:
-		return redirect(url_for('login_page'))
-
-def match_page():
-	if 'loggedin' in session:
-		return render_template('match.html')
 	else:
 		return redirect(url_for('login_page'))
 
@@ -316,6 +310,7 @@ def profile_page():
 		mycursor = db.cursor()
 		mycursor.execute('SELECT nickname, balance, registerdate FROM users WHERE nickname = %s', (username,))
 		nickname_, balance_, registerdate_ = mycursor.fetchone()
+		balance_ = round(balance_, 2)
 		user_ = User(nickname_, balance_, registerdate_)
 
 		mycursor2 = db.cursor()

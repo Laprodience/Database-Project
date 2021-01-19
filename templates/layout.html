@@ -2,21 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="utf-9" />
-    <link rel="stylesheet" href="{{url_for('static', filename='index.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet.css')}}">
     <title>{% block title %}{% endblock %}</title>
 </head>
 
 <body style="background-color: #B8860B;">
     <header>
         <nav>
-            <ul class="top">
+            <ul class="navb">
                 <li><a href="{{url_for('home_page')}}">News</a></li>
 
                 <li><a href="{{url_for('matches_page')}}">Matches</a></li>
 
                 <li><a href="{{url_for('teams_page')}}">Teams</a></li>
 
-                <li><a href="{{url_for('top_page')}}">Top</a></li>
+                <li><a href="{{url_for('top_page')}}">Top 10</a></li>
 
                 <li><a href="{{url_for('users_page')}}">Users</a></li>
 
@@ -30,12 +30,15 @@
             </ul>
         </nav>
     </header>
-    <hr/><hr/><hr/>
+    <br />
+    <br />
+    <br />
+    <div class="emp"></div>
     <div class="textto">
         {% block content %}{% endblock %}
     </div>
     <footer>
-        <small>&copy 2020 Mert Şahin</small>
+        <small>&copy 2021 Mert Şahin</small>
     </footer>
 </body>
 </html>

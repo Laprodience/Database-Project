@@ -1,0 +1,93 @@
+body {
+    font: 15pt Trebuchet;
+    color: black;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+h1 {
+    border-radius: 16px;
+    text-align: center;
+    color: #01FE99;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    margin: 1em;
+    padding: 0;
+    text-transform: uppercase;
+}
+h2 {
+    border-radius: 16px;
+    text-align: center;
+    color: #01FE99;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    margin: 1em;
+    padding: 0;
+    text-transform: uppercase;
+}
+
+strong {
+    color: #DC143C;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    font: bold 20pt Trebuchet;
+}
+
+highlight {
+    color: #01FE99;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    font: bold 15pt Trebuchet;
+}
+
+p {
+    text-indent: 1em;
+}
+
+a {
+    text-decoration: none;
+}
+
+.box {
+    font: 16pt Trebuchet;
+    color: #B8860B;
+    background-color: #DC143C;
+    border-radius: 7px;
+    font-weight: bold;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+input[type=submit] {
+    font: 16pt Trebuchet;
+    color: #B8860B;
+    background-color: #DC143C;
+    border-radius: 7px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    cursor: pointer;
+}
+
+.navb {
+    list-style-type: none;
+    overflow: hidden;
+    margin: 0;
+    padding: 1em, 1em, 1em, 1em;
+    background-color: #DC143C;
+    position: fixed;
+}
+
+.navb li {
+    float: left;
+}
+
+.navb li a {
+    display: block;
+    font: bold 24pt Trebuchet, Monospace;
+    text-align: center;
+    padding: 16px;
+    color: #01FE99;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    text-transform: uppercase;
+}

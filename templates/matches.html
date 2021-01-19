@@ -8,19 +8,19 @@
     {% for match in ongoing %}
     <tr>
         <td>
-            <b>Match ID: </b>{{ match.id }}
+            <b><highlight>Match ID: </highlight></b>{{ match.id }}
             &emsp;
-            <b>Team 1: </b>{{ match.team1 }}
+            <b><highlight>Team 1: </highlight></b>{{ match.team1 }}
             &emsp;
-            <b>Team 2: </b>{{ match.team2 }}
+            <b><highlight>Team 2: </highlight></b>{{ match.team2 }}
             &emsp;
-            <b>Team 1 Odd: </b>{{ match.team1_odd }}
+            <b><highlight>Team 1 Odd: </highlight></b>{{ match.team1_odd }}
             &emsp;
-            <b>Team 2 Odd: </b>{{ match.team2_odd }}
+            <b><highlight>Team 2 Odd: </highlight></b>{{ match.team2_odd }}
             &emsp;
-            <b>Match Date: </b>{{ match.date }}
+            <b><highlight>Match Date: </highlight></b>{{ match.date }}
             &emsp;
-            <b>Match Score: </b><matchscoretag>{{ match.score }}</matchscoretag>
+            <b><highlight>Match Score: </highlight></b><matchscoretag>{{ match.score }}</matchscoretag>
             &emsp;<br />
             {% if (session['nickname'] == "admin") and (match.score == "0 - 0") %}
                 <form action="{{ url_for('matches_page') }}" method="post">
@@ -38,26 +38,26 @@
     {% for match in upcoming %}
     <tr>
         <td>
-            <b>Match ID: </b>{{ match.id }}
+            <b><highlight>Match ID: </highlight></b>{{ match.id }}
             &emsp;
-            <b>Team 1: </b>{{ match.team1 }}
+            <b><highlight>Team 1: </highlight></b>{{ match.team1 }}
             &emsp;
-            <b>Team 2: </b>{{ match.team2 }}
+            <b><highlight>Team 2: </highlight></b>{{ match.team2 }}
             &emsp;
-            <b>Team 1 Odd: </b>{{ match.team1_odd }}
+            <b><highlight>Team 1 Odd: </highlight></b>{{ match.team1_odd }}
             &emsp;
-            <b>Team 2 Odd: </b>{{ match.team2_odd }}
+            <b><highlight>Team 2 Odd: </highlight></b>{{ match.team2_odd }}
             &emsp;
-            <b>Match Date: </b>{{ match.date }}
-            <form action="{{ url_for('matches_page') }}" method="post" name="betmatch">
-                <br><input type="radio" name="betodd" value="{{ match.id }},  {{ match.team1_odd }}"> Bet for {{ match.team1 }}: {{ match.team1_odd }}
-                <br><input type="radio" name="betodd" value="{{ match.id }}, {{ match.team2_odd }}"> Bet for {{ match.team2 }}: {{ match.team2_odd }}
-                <br><input class="box" type="text" name="betamount" placeholder="Amount" id="betamount" required>
-                {% if returnid == match.id %}
-                    <br><div class="msg">{{ msg }}</div>
-                {% endif %}
-                <input type="submit" value="Play Bet">
-            </form>
+            <b><highlight>Match Date: </highlight></b>{{ match.date }}
+        <form action="{{ url_for('matches_page') }}" method="post" name="betmatch">
+            <br><input type="radio" name="betodd" value="{{ match.id }},  {{ match.team1_odd }}"> Bet for {{ match.team1 }}: <strong>{{ match.team1_odd }}</strong>
+            <br><input type="radio" name="betodd" value="{{ match.id }}, {{ match.team2_odd }}"> Bet for {{ match.team2 }}: <strong>{{ match.team2_odd }}</strong>
+            <br><input class="box" type="text" name="betamount" placeholder="Amount" id="betamount" required>
+            {% if returnid == match.id %}
+            <br><div class="msg">{{ msg }}</div>
+            {% endif %}
+            <input type="submit" value="Play Bet">
+        </form>
         </td>
     </tr>
     {% endfor %}
@@ -69,21 +69,21 @@
     {% for match in played %}
     <tr>
         <td>
-            <b>Match ID: </b>{{ match.id }}
+            <b><highlight>Match ID: </highlight></b>{{ match.id }}
             &emsp;
-            <b>Team 1: </b>{{ match.team1 }}
+            <b><highlight>Team 1: </highlight></b>{{ match.team1 }}
             &emsp;
-            <b>Team 2: </b>{{ match.team2 }}
+            <b><highlight>Team 2: </highlight></b>{{ match.team2 }}
             &emsp;
-            <b>Team 1 Odd: </b>{{ match.team1_odd }}
+            <b><highlight>Team 1 Odd: </highlight></b>{{ match.team1_odd }}
             &emsp;
-            <b>Team 2 Odd: </b>{{ match.team2_odd }}
+            <b><highlight>Team 2 Odd: </highlight></b>{{ match.team2_odd }}
             &emsp;
-            <b>Match Date: </b>{{ match.date }}
+            <b><highlight>Match Date: </highlight></b>{{ match.date }}
             &emsp;
-            <b>Match Score: </b>{{ match.score }}
+            <b><highlight>Match Score: </highlight></b>{{ match.score }}
             &emsp;
-            <b>Match Winner: </b>{{ match.winner }}
+            <b><highlight>Match Winner: </highlight></b>{{ match.winner }}
         </td>
     </tr>
     {% endfor %}

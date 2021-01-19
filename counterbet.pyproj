@@ -21,10 +21,6 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="database.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="forms.py" />
     <Compile Include="machine.py">
       <SubType>Code</SubType>
     </Compile>
@@ -95,6 +91,7 @@
     <Content Include="static\images\Xyp9x.png" />
     <Content Include="static\images\yuurih.webp" />
     <Content Include="static\images\ZywOo.webp" />
+    <Content Include="static\stylesheet.css" />
     <Content Include="templates\adminpanel.html" />
     <Content Include="templates\home.html" />
     <Content Include="templates\layout.html" />

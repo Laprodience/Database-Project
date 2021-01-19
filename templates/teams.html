@@ -8,17 +8,17 @@
     <ol class="top">
         {% for team in teams %}
         <li>
-            <b>{{ team.name }}</b>:
+            <b><strong>{{ team.name }}</strong></b>:
             &emsp;
-            <a href="{{ url_for('player_page', player_nickname=team.captain) }}">{{ team.captain }}</a>&emsp;-
+            <a href="{{ url_for('player_page', player_nickname=team.captain) }}"><highlight>{{ team.captain }}</highlight></a>&emsp;-
             &emsp;
-            <a href="{{ url_for('player_page', player_nickname=team.sniper) }}">{{ team.sniper }}</a>&emsp;-
+            <a href="{{ url_for('player_page', player_nickname=team.sniper) }}"><highlight>{{ team.sniper }}</a></highlight>&emsp;-
             &emsp;
-            <a href="{{ url_for('player_page', player_nickname=team.entry_fragger) }}">{{ team.entry_fragger }}</a>&emsp;-
+            <a href="{{ url_for('player_page', player_nickname=team.entry_fragger) }}"><highlight>{{ team.entry_fragger }}</highlight></a>&emsp;-
             &emsp;
-            <a href="{{ url_for('player_page', player_nickname=team.support) }}">{{ team.support }}</a>&emsp;-
+            <a href="{{ url_for('player_page', player_nickname=team.support) }}"><highlight>{{ team.support }}</highlight></a>&emsp;-
             &emsp;
-            <a href="{{ url_for('player_page', player_nickname=team.lurker) }}">{{ team.lurker }}</a>
+            <a href="{{ url_for('player_page', player_nickname=team.lurker) }}"><highlight>{{ team.lurker }}</highlight></a>
             {% endfor %}
         </li>
     </ol>

@@ -3,17 +3,18 @@
 {% block title %}counterbet.com{% endblock %}
 {% block content %}
 <h1> {{ player.nickname }} </h1>
-<p></p>
+<p>
 
-<img src="{{url_for('static', filename = photostring)}}"/>
-<table>
-    <tr>
-        <td>
-            <h3>{{ player.nickname }}</h3>
-            <h3> Rating: </h3>{{ player.rating }}
-            <h3>Team: </h3>{{ player.team }}
-            <h3>Settings: </h3>{{ player.settings }}
-        </td>
-    </tr>
-</table>
+    <img src="{{url_for('static', filename = photostring)}}" />
+    <table>
+        <tr>
+            <td>
+                <h3><strong>{{ player.nickname }}</strong></h3>
+                <h3> <highlight>Rating: </highlight></h3>{{ player.rating }}
+            <h3><highlight>Team: </highlight></h3>{{ player.team }}
+            <h3><highlight>Settings: </highlight></h3>{{ player.settings }}
+            </td>
+        </tr>
+    </table>
+</p>
 {% endblock %}

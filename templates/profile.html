@@ -3,15 +3,15 @@
 {% block title %}counterbet.com{% endblock %}
 {% block content %}
 <h1>Welcome to your profile, {{ user_.nickname }}</h1>
-<p>You've been with us since {{ user_.registerdate }}!</p>
-<p>Currently, you have: ${{ user_.balance }}</p>
+<p>You've been with us since <b>{{ user_.registerdate }}</b>!</p>
+<p>Currently, you have: <strong>${{ user_.balance }}</strong></p>
 
 <h2>Add Money</h2>
 <div>
     <form action="{{ url_for('profile_page') }}" method="post">
         <input class="box" type="text" name="balance" placeholder="Add Money" id="balance" required>
 
-        <div class="msg">{{ msg }}</div>
+        <div class="msg"><b>{{ msg }}</b></div>
 
         <input type="submit" value="Add">
     </form>

@@ -3,7 +3,7 @@
 {% block title %}counterbet.com{% endblock %}
 {% block content %}
 <h1>User List</h1>
-<p>Currently we have {{ playercount }} professional players and {{ usercount }} registered users, making {{ totalcount }} users in total.</p>
+<p>Currently we have <highlight>{{ playercount }}</highlight> professional players and <highlight>{{ usercount }}</highlight> registered users, making <strong>{{ totalcount }}</strong> users in total.</p>
 <h2>Search by Nickname</h2>
 <div>
     <form action="{{ url_for('users_page') }}" method="post">
@@ -17,7 +17,7 @@
     <tr>
         <td>
             <b>
-                {{ nickname }}
+                <highlight>{{ nickname }}</highlight>
             </b>
         </td>
     </tr>
@@ -34,13 +34,13 @@
             <td>
                 <b>
                     <a href="{{ url_for('player_page', player_nickname=player.nickname) }}">
-                        {{ player.nickname }}
+                        <strong>{{ player.nickname }}</strong>
                     </a>
                 </b>,
                 &emsp;
-                <b>Team: </b>{{ player.team }},
+                <b><highlight>Team: </highlight></b>{{ player.team }},
                 &emsp;
-                <b>Rating: </b>{{ player.rating }}
+                <b><highlight>Rating: </highlight></b>{{ player.rating }}
             </td>
         </tr>
         {% endfor %}
@@ -52,9 +52,9 @@
         {% for user in users %}
         <tr>
             <td>
-                {{ user.nickname }},
+                <strong>{{ user.nickname }}</strong>,
                 &emsp;
-                {{ user.registerdate }}
+                <b>{{ user.registerdate }}</b>
             </td>
         </tr>
         {% endfor %}
